@@ -1,22 +1,11 @@
 import "./hero.scss";
-import { Component } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
 
-function Hero() {
-    // axios
-    // .get(`http://localhost:8080/`)
-    // .then ((response) => {
-    //     this.setState({
-    //         selectedHero: response.data[0].thumbnail
-    //         })
-    //     })
-    // };
+function Hero(props) {
+
+    console.log(props)
     return (
         <>
-        <Link to="/">
-            <img src="" alt="" />
-        </Link>
+            <div>{props.thumbnail.path + '/portrait_xlarge.' + props.thumbnail.extension}</div>
         </>
     );
 }

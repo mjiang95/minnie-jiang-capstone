@@ -1,53 +1,30 @@
 import "./Comics.scss";
 import { Link } from "react-router-dom";
 import { Component } from "react";
+const axios = require("axios");
 
 class Comics extends Component {
   state = {
-    selectedHero: {},
+    selectedHero: {}
   };
 
   componentDidMount() {
-    // const characterId = this.props.match.params.characterId;
+    const characterId = this.props.match.params.characterId;
 
-    axios.get(`http://localhost:8080/api/marvel/`).then((response) => {
+    axios.get(`http://localhost:8080/api/marvel/${characterId}/comics`).then((response) => {
       this.setState({
-        heroList: response.data,
+        selectedHero: response.data,
       });
-      let list = response.data.map((hero) => {
-        return (
-          hero.thumbnail.path + "/portrait_medium." + hero.thumbnail.extension
-        );
-      });
-      console.log(list);
-      console.log(this.state.heroList);
+      console.log(this.state.selectedHero);
     });
   }
 
   render() {
-    const heroSelected = this.state.selectedHero;
+    const selectedHero = this.state.selectedHero;
 
     return (
       <>
-        {heroSelected.map((hero) => {
-          return (
-            <>
-              <div>{hero.name}</div>
-              <div>
-                <img
-                  src={
-                    hero.thumbnail.path +
-                    "/portrait_xlarge." +
-                    hero.thumbnail.extension
-                  }
-                  alt={hero.name}
-                />
-              </div>
-              <div>{hero.comics}</div>
-              <div></div>
-            </>
-          );
-        })}
+              <div>{selectedHero.title}</div>
       </>
     );
   }

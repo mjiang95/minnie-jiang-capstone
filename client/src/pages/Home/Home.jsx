@@ -13,11 +13,11 @@ class Home extends Component {
       };
     
       componentDidMount() {
-        // const characterId = this.props.match.params.characterId;
+        const characterId = this.props.match.params.characterId;
     
-        axios.get(`http://localhost:8080/api/marvel/`).then((response) => {
+        axios.get(`http://localhost:8080/api/marvel/${characterId}`).then((response) => {
           this.setState({
-            heroList: response.data,
+            selectedHero: response.data,
           });
         });
       }
@@ -45,7 +45,7 @@ class Home extends Component {
       
         render() {
 
-          const { heroList, selectedHero } = this.state;
+          const {selectedHero} = this.state;
             
             return (
               <>

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import PageNav from './components/PageNav/PageNav';
 import Home from '../src/pages/Home/Home';
 import PageNavScroll from "./components/PageNavScroll/PageNavScroll.jsx";
+import Comics from "./pages/Comics/Comics";
 
 function App(){
     return (
@@ -10,7 +11,7 @@ function App(){
              <PageNav />
              <PageNavScroll />
              <Route path= "/" exact component= {Home} />
-             {/* <Route path= "/:characterId/comics" component = {Comics} /> */}
+             <Route path= "/:characterId/comics" component = {Comics} />
              {/* <Route path= "/:characterId/series" component = {Series}/> */}
          </section>
         </BrowserRouter>

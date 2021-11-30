@@ -43,7 +43,7 @@ router.route("/")
 
 router.route("/:characterId")
     .get((req, res) => {
-   
+
     axios
     .get(`https://gateway.marvel.com:443/v1/public/characters/${req.params.characterId}?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
     .then( response => {
@@ -58,10 +58,10 @@ router.route("/:characterId")
     })
 });
 
-router.route('/:characterId', function (req, res) {
-   
+router.route('/:characterId/comics') 
+    .get((req, res) => {
     axios
-    .get(`https://gateway.marvel.com:443/v1/public/characters?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
+    .get(`https://gateway.marvel.com:443/v1/public/characters/${req.params.characterId}/comics?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
     .then( response => {
         res.send(
         response.data.data.results[0]
@@ -69,21 +69,11 @@ router.route('/:characterId', function (req, res) {
     })
 });
 
-router.route('/:characterId/comics', function (req, res) {
+router.route('/:characterId/series')
+    .get((req,res) => {
    
     axios
-    .get(`https://gateway.marvel.com:443/v1/public/characters?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
-    .then( response => {
-        res.send(
-        response.data.data.results[0]
-        );
-    })
-});
-
-router.route('/:characterId/series', function (req, res) {
-   
-    axios
-    .get(`https://gateway.marvel.com:443/v1/public/characters?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
+    .get(`https://gateway.marvel.com:443/v1/public/characters/${req.params.characterId}/series?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
     .then( response => {
         res.send(
         response.data.data.results[0]
