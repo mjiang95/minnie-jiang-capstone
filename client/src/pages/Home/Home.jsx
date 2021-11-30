@@ -9,31 +9,27 @@ const axios = require("axios");
 class Home extends Component {
     state = {
         heroList: [],
-        selectedHero: {}
-    };
-
-    componentDidMount () {
-        const selectedHeroId = this.props.match.params.selectedHeroId;
-
-        axios
-            .get("http://localhost:8080/api/marvel")
-            .then ((response) => {
-                this.setState({
-                    heroList: response.data
-                })
-                console.log(response.data)
-                console.log(this.state.heroList);
-            })
-        };
-
+        selectedHero: {},
+      };
+    
+      componentDidMount() {
+        // const characterId = this.props.match.params.characterId;
+    
+        axios.get(`http://localhost:8080/api/marvel/`).then((response) => {
+          this.setState({
+            heroList: response.data,
+          });
+        });
+      }
+      
         render() {
-  
+            
             return (
               <>
               <section>
-                <PageNavScroll />
-                <Hero />
-                <HeroCards />
+                <PageNavScroll heroList = {this.state.heroList} />
+                <Hero heroList = {this.state.heroList} />
+                <HeroCards heroList = {this.state.heroList} />
               </section>
               </>
                 );

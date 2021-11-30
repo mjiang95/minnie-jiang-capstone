@@ -24,11 +24,13 @@ class PageNavScroll extends Component {
 
     return (
       <>
+      
+      <div className="hero-scroll-menu">
         {heroArray.map((hero) => {
           return (
             <>
               <Link to={`/${hero.name}`}>
-                <img
+                <img className="hero-scroll"
                   src={
                     hero.thumbnail.path +
                     "/portrait_medium." +
@@ -40,6 +42,7 @@ class PageNavScroll extends Component {
             </>
           );
         })}
+         </div>
       </>
     );
   }

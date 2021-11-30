@@ -1,3 +1,44 @@
-// PageNav__hero--title {
-//     background-image: url("marvel-hero-page.jpg");
-// }
+.header {
+    display: flex; 
+    color: white; 
+    padding: 2rem; 
+    display: flex; 
+    align-items: center;
+
+}
+
+.PageNav {
+    background-image: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url("../../assets/images/marvel-background.jpg");
+    background-size: cover;
+    height: 300px; 
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;    
+
+    &-title {
+        font-size: 2rem;
+        font-style: italic; 
+    }
+
+    &-subtitle {
+        padding: 2rem; 
+    }
+
+    &__hero--title {
+        color: white; 
+        font-size: 3rem; 
+        font-style: italic; 
+        padding: 0 0 0 2rem; 
+        margin: 2rem 0 0 0; 
+
+    }
+
+    &__hero--subtitle {
+        padding: 0 0 0 2rem; 
+        margin: 0; 
+        color: white; 
+        margin: 0 0 2rem 0; 
+    }
+}

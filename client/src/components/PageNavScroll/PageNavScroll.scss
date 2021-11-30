@@ -1,0 +1,15 @@
+.hero-scroll-menu {
+  max-height: 160px;
+  padding: 14px;
+  display: flex;
+  overflow: auto;
+  background-color: black; 
+}
+
+.hero-scroll-menu::-webkit-scrollbar {
+    width: 0; 
+}
+
+.hero-scroll {
+    margin: 0 14px; 
+}

@@ -16,7 +16,7 @@ class Comics extends Component {
       });
       let list = response.data.map((hero) => {
         return (
-          hero.thumbnail.path + "portrait_xlarge." + hero.thumbnail.extension
+          hero.thumbnail.path + "/portrait_medium." + hero.thumbnail.extension
         );
       });
       console.log(list);
