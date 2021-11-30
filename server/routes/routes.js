@@ -58,6 +58,39 @@ router.route("/:characterId")
     })
 });
 
+router.route('/:characterId', function (req, res) {
+   
+    axios
+    .get(`https://gateway.marvel.com:443/v1/public/characters?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
+    .then( response => {
+        res.send(
+        response.data.data.results[0]
+        );
+    })
+});
+
+router.route('/:characterId/comics', function (req, res) {
+   
+    axios
+    .get(`https://gateway.marvel.com:443/v1/public/characters?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
+    .then( response => {
+        res.send(
+        response.data.data.results[0]
+        );
+    })
+});
+
+router.route('/:characterId/series', function (req, res) {
+   
+    axios
+    .get(`https://gateway.marvel.com:443/v1/public/characters?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
+    .then( response => {
+        res.send(
+        response.data.data.results[0]
+        );
+    })
+});
+
 
 
 

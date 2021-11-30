@@ -3,7 +3,7 @@ import { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function HeroCards() {
+function HeroCards({selectedHero}) {
     // axios
     // .get(`http://localhost:8080/`)
     // .then ((response) => {
