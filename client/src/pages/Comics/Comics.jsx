@@ -5,7 +5,7 @@ const axios = require("axios");
 
 class Comics extends Component {
   state = {
-    selectedHero: {}
+    selectedHero: []
   };
 
   componentDidMount() {
@@ -24,7 +24,25 @@ class Comics extends Component {
 
     return (
       <>
-              <div>{selectedHero.title}</div>
+          <div>      
+              {selectedHero.map((hero) => {
+          return (
+            <>
+              <Link to={`/${hero.urls.url}`}>
+                <img className="hero-image"
+                  src={
+                    hero.thumbnail.path +
+                    "/portrait_medium." +
+                    hero.thumbnail.extension
+                  }
+                  alt={hero.title}
+                />
+                </Link>
+              <h2>{hero.title}</h2>
+            </>
+          );
+        })}
+        </div>      
       </>
     );
   }

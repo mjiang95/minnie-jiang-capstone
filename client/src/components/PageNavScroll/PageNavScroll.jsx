@@ -6,7 +6,7 @@ const axios = require("axios");
 class PageNavScroll extends Component {
   state = {
     heroList: [],
-    selectedHero: {},
+    selectedHero: {}
   };
 
   componentDidMount() {
@@ -29,7 +29,7 @@ class PageNavScroll extends Component {
         {heroArray.map((hero) => {
           return (
             <>
-              <Link to={`/${hero.name}`}>
+              <Link to={`/${hero.id}`}>
                 <img className="hero-scroll"
                   src={
                     hero.thumbnail.path +

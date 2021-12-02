@@ -3,6 +3,7 @@ import PageNav from './components/PageNav/PageNav';
 import Home from '../src/pages/Home/Home';
 import PageNavScroll from "./components/PageNavScroll/PageNavScroll.jsx";
 import Comics from "./pages/Comics/Comics";
+import Series from "./pages/Series/Series.jsx";
 
 function App(){
     return (
@@ -11,8 +12,9 @@ function App(){
              <PageNav />
              <PageNavScroll />
              <Route path= "/" exact component= {Home} />
+             <Route path= "/:characterId" exact component= {Home} />
              <Route path= "/:characterId/comics" component = {Comics} />
-             {/* <Route path= "/:characterId/series" component = {Series}/> */}
+             <Route path= "/:characterId/series" component = {Series}/>
          </section>
         </BrowserRouter>
     )

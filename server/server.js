@@ -11,7 +11,7 @@ app.use(cors());
 
 const marvelRoutes = require('./routes/routes');
 app.use("/api/marvel", marvelRoutes);
-const {PORT, PUBLIC_KEY, PRIVATE_KEY} = process.env;
+const {PORT} = process.env;
 
 app.listen(PORT, function() {
     console.log('Hello World');
