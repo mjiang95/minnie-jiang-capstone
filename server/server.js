@@ -14,7 +14,7 @@ const marvelRoutes = require('./routes/routes');
 const userRoutes = require('./routes/userRoutes')
 
 app.use("/api/marvel", marvelRoutes);
-app.use("/user", userRoutes);
+app.use("/users", userRoutes);
 
 const {PORT} = process.env;
 
