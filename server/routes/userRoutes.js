@@ -17,16 +17,16 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  const { username, password } = req.body;
+  const { name, username, password } = req.body;
 
   knex("marvel_login_user_name")
     .where({ username, password })
     .then((rows) => {
-      console.log(rows);
-      if (username && password === rows) {
+      console.log(rows[0].username);
+      if (username === rows[0].username && password === rows[0].password) {
         res
           .status(200)
-          .json({ token: jwt.sign({ name: user.name }, jsonSecretKey) });
+          .json({ token: jwt.sign({ name: rows[0].name }, jsonSecretKey) });
       } else {
         res.status(403).json({
           token: "",

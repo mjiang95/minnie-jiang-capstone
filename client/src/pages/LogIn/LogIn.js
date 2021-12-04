@@ -20,7 +20,7 @@ function LogIn(props) {
             console.log(res)
             let token = res.data.token
             sessionStorage.setItem('authToken', token)
-            props.history.push('/')
+            props.history.push('/home')
         })
     }
 

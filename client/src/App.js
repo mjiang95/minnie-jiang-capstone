@@ -14,13 +14,13 @@ function App(){
          <section>
              <PageNav />
              <PageNavScroll />
-             <Route path= "/" exact component= {Home} />
-             <Route path="/dash" exact component={Dashboard} />
+             <Route path= "/home" exact component= {Home} />
+             <Route path= "/character/:characterId" exact component= {Home} />
+             <Route path= "/character/:characterId/comics" exact component = {Comics} />
+             <Route path= "/:characterId/series" exact component = {Series}/>
+             <Route path="/" exact component= {Dashboard} />
              <Route path="/signup" exact component={SignUp} />
              <Route path="/login" exact component={LogIn} />
-             <Route path= "/:characterId" exact component= {Home} />
-             <Route path= "/:characterId/comics" exact component = {Comics} />
-             <Route path= "/:characterId/series" exact component = {Series}/>
 
          </section>
         </BrowserRouter>
