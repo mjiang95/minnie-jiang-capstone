@@ -10,7 +10,7 @@ class PageNavScroll extends Component {
   };
 
   componentDidMount() {
-    // const characterId = this.props.match.params.characterId;
+
 
     axios.get(`http://localhost:8080/api/marvel/`).then((response) => {
       this.setState({
@@ -29,7 +29,7 @@ class PageNavScroll extends Component {
         {heroArray.map((hero) => {
           return (
             <>
-              <Link to={`/${hero.id}`}>
+              <Link to={`/character/${hero.id}`}>
                 <img className="hero-scroll"
                   src={
                     hero.thumbnail.path +
