@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./SearchBar.scss";
 import searchIcon from "../../assets/icons/search_icon_152764.png";
 import { Link } from "react-router-dom";
@@ -22,20 +21,8 @@ class SearchBar extends Component {
     });
   }
 
-//  handleFilter = (e) => {
-//   const searchWord = e.target.value
-//   const newFilter = this.state.heroSearchResults.filter((value) => {
-//     return value.name.includes(searchWord);
-//   })
-//   this.setState({
-//     filteredData: newFilter
-//   })
-// }
-
   render() {
-    const filterHeroArray = this.state.filteredData;
     const heroSearchArray = this.state.heroSearchResults;
-
     const handleFilter = (e) => {
       const searchWord = e.target.value
       const newFilter = heroSearchArray.filter((value) => {
@@ -46,11 +33,17 @@ class SearchBar extends Component {
       })
     }
 
+    const filterHeroArray = this.state.filteredData;
+    console.log(filterHeroArray);
+
+
+
     return (
       <>
         <div className="search-bar__wrapper">
           <div className="search-input">
           <input className="input" type="text" placeholder= "Type to search..." onChange={handleFilter}/>
+          {filterHeroArray.length != 0 && (
           <div className="autocomplete-box">
             {filterHeroArray.map((results) => {
               return (
@@ -64,6 +57,7 @@ class SearchBar extends Component {
               );
             })}
           </div>
+          )}
           <button className="search-button">
             <img className="search-icon" src={searchIcon}></img>
           </button>

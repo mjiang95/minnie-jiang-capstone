@@ -1,5 +1,6 @@
 import "./PageNav.scss";
 import { Link, NavLink } from "react-router-dom";
+import SearchBar from "../SearchBar/SearchBar";
 
 function PageNav() {
   
@@ -10,6 +11,7 @@ function PageNav() {
         <div className="PageNav-title">HeroSearch</div>
         <div className="PageNav-subtitle">Did you say comics?</div>
         <div className="PageNav-subtitle">How about series?</div>
+        <SearchBar />
       </div>
       <div className="PageNav__hero">
         <h1 className="PageNav__hero--title">

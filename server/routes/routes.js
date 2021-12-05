@@ -3,12 +3,9 @@ const router = express.Router();
 const axios = require("axios");
 const md5 = require('md5');
 const app = express();
-// const cors = require('cors');
 
 require('dotenv').config();
 
-// app.use(express.json());
-// app.use(cors());
 
 
 const {PUBLIC_KEY, PRIVATE_KEY} = process.env
@@ -33,8 +30,6 @@ router.route("/")
         res.send(
         response.data.data.results
         );
-
-        // console.log(req.params.characterId)
     })
     .catch(err => {
         console.log(err);
@@ -43,12 +38,12 @@ router.route("/")
 
 router.route("/:characterId")
     .get((req, res) => {
-   
+
     axios
     .get(`https://gateway.marvel.com:443/v1/public/characters/${req.params.characterId}?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
     .then( response => {
         res.send(
-        response.data.data.results[0]
+        response.data.data.results
         );
 
         console.log(req.params.characterId)
@@ -58,40 +53,28 @@ router.route("/:characterId")
     })
 });
 
-router.route('/:characterId', function (req, res) {
-   
+router.route('/:characterId/comics') 
+    .get((req, res) => {
     axios
-    .get(`https://gateway.marvel.com:443/v1/public/characters?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
+    .get(`https://gateway.marvel.com:443/v1/public/characters/${req.params.characterId}/comics?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
     .then( response => {
         res.send(
-        response.data.data.results[0]
+        response.data.data.results
         );
     })
 });
 
-router.route('/:characterId/comics', function (req, res) {
+router.route('/:characterId/series')
+    .get((req,res) => {
    
     axios
-    .get(`https://gateway.marvel.com:443/v1/public/characters?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
+    .get(`https://gateway.marvel.com:443/v1/public/characters/${req.params.characterId}/series?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
     .then( response => {
         res.send(
-        response.data.data.results[0]
+        response.data.data.results
         );
     })
 });
-
-router.route('/:characterId/series', function (req, res) {
-   
-    axios
-    .get(`https://gateway.marvel.com:443/v1/public/characters?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${hashedStr}`)
-    .then( response => {
-        res.send(
-        response.data.data.results[0]
-        );
-    })
-});
-
-
 
 
 module.exports = router;

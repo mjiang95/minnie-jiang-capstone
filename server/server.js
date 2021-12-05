@@ -2,7 +2,8 @@ const express = require ('express');
 const axios = require("axios");
 const app = express();
 const cors = require('cors');
-const md5 = require('md5');
+const knex = require("knex")(require("./knexfile").development);
+
 
 require('dotenv').config();
 
@@ -10,8 +11,12 @@ app.use(express.json());
 app.use(cors());
 
 const marvelRoutes = require('./routes/routes');
+const userRoutes = require('./routes/userRoutes')
+
 app.use("/api/marvel", marvelRoutes);
-const {PORT, PUBLIC_KEY, PRIVATE_KEY} = process.env;
+app.use("/users", userRoutes);
+
+const {PORT} = process.env;
 
 app.listen(PORT, function() {
     console.log('Hello World');
