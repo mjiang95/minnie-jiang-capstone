@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import Input from '../../components/Input/Input';
 import "./Login.scss";
 
+
 function LogIn(props) {
 
     const handleLogIn = (e) => {
@@ -26,15 +27,19 @@ function LogIn(props) {
     }
 
     return (
+        <section className="login-page">
         <div className="login">
             <h1>Log In</h1>
-            <form onSubmit={handleLogIn}>
+            <form className="login-form" onSubmit={handleLogIn}>
                 <Input label="Username" name="username" type="text" className="login-username"/>
                 <Input label="Password" name="password" type="password" className="login-password"/>
-                <button type="submit">Log In</button>
+                <div className= "login-buttons">
+                <button className="submit" type="submit">Log In</button>
+                <Link className="signup-link" to="/signup">Sign Up</Link>
+                </div>
             </form>
-            <Link to="/signup">Sign Up</Link>
         </div>
+        </section>
     )
 }
 

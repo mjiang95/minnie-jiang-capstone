@@ -1,6 +1,9 @@
 .field {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px; 
 
     &__label {
         margin-bottom: 0.5rem;
