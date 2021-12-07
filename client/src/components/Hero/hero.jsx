@@ -1,5 +1,4 @@
 import "./hero.scss";
-
 import Modal from "react-modal";
 import React, { useState } from "react";
 import heroDescription from "../../assets/images/sihouette-superhero.jpg";
@@ -15,8 +14,9 @@ function Hero(props) {
 
   return (
     <>
-      <div>
-        <img
+    <section className="hero-wrapper">
+      <div className="hero">
+        <img className ="hero-image"
           src={
             props.selectedHero.thumbnail.path +
             "/detail." +
@@ -24,24 +24,24 @@ function Hero(props) {
           }
           alt=""
         />
-        <div>{props.selectedHero.name}</div>
+        <div className="hero-name">{props.selectedHero.name}</div>
       </div>
       <section className="cards-section">
-        <div className="description-card">
+        <div className= {`description-card ${isOpen && "button-active"}`} >
           <button
-            className="description-button"
+            className= "description-button"
             onClick={() => setIsOpen(!isOpen)}
           >
             <img
-              className="description-image"
+              className="description-image" 
               src={heroDescription}
               alt="sihouette-superhero"
             />
           </button>
           <div className={`content ${isOpen && "open-content"}`}>
-            <h2>Hero Description</h2>
+            <p>Hero Description</p>
             <div id="hero-description">
-              <button onClick={() => setModalIsOpen(true)}>Description</button>
+              <button className="description-modal" onClick={() => setModalIsOpen(true)}>Description</button>
               <Modal isOpen={modalIsOpen}>
                 {props.selectedHero.description}
                 <button onClick={() => setModalIsOpen(false)}>Close</button>
@@ -49,7 +49,7 @@ function Hero(props) {
             </div>
           </div>
         </div>
-        <div className="comics-card">
+        <div className= {`comics-card ${isOpenComic && "button-active"}`}>
           <button
             className="comics-button"
             onClick={() => setIsOpenComic(!isOpenComic)}
@@ -57,10 +57,11 @@ function Hero(props) {
             <img className="comics-image" src={heroComics} alt="hero-comics" />
           </button>
           <div className={`content ${isOpenComic && "open-content"}`}>
-            {props.selectedHero.comics.available}
+            <p>Marvel Comicon</p>
+            #{props.selectedHero.comics.available}
           </div>
         </div>
-        <div className="series-card">
+        <div className={`series-card ${isOpenSeries && "button-active"}`}>
           <button
             className="series-button"
             onClick={() => setIsOpenSeries(!isOpenSeries)}
@@ -68,9 +69,11 @@ function Hero(props) {
             <img className="series-image" src={heroSeries} alt="hero-series" />
           </button>
           <div className={`content ${isOpenSeries && "open-content"}`}>
-            {props.selectedHero.series.available}
+            <p>Marvel Cinematic Universe</p>
+            #{props.selectedHero.series.available}
           </div>
         </div>
+      </section>
       </section>
     </>
   );

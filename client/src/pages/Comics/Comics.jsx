@@ -24,7 +24,7 @@ class Comics extends Component {
 
     return (
       <>
-          <div>      
+          <div className = "hero--comics">      
               {selectedHero.map((hero) => {
           return (
             <>
@@ -38,7 +38,7 @@ class Comics extends Component {
                   alt={hero.title}
                 />
                 </Link>
-              <h2>{hero.title}</h2>
+              <h2 className="hero-name">{hero.title}</h2>
             </>
           );
         })}
