@@ -1,3 +1,9 @@
+@use "../../styles/typography" as *;
+
+* {
+    font-family: $font-stack; 
+}
+
 .header {
     display: flex; 
     color: white; 
@@ -5,13 +11,14 @@
     display: flex; 
     align-items: center;
     height: 5rem; 
+    font-family: $font-stack; 
 
 }
 
 .PageNav {
     background-image: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url("../../assets/images/marvel-background.jpg");
     background-size: cover;
-    height: 300px; 
+    height: 250px; 
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
@@ -20,17 +27,21 @@
     padding: 2rem 0; 
 
     &-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-style: italic; 
+        font-family: $font-stack; 
     }
 
     &-subtitle {
-        padding: 2rem; 
+        padding: 1rem 0.5rem 1rem 1rem; 
+        width: 15rem; 
+        font-family: $font-stack; 
     }
 
     &__hero--title {
         color: white; 
-        font-size: 3rem; 
+        font-family: $font-stack;
+        font-size: 2.5rem; 
         font-style: italic; 
         padding: 0 0 0 2rem; 
         margin: 2rem 0 0 0; 
@@ -41,6 +52,7 @@
         padding: 0 0 0 2rem; 
         margin: 0; 
         color: white; 
+        font-family: $font-stack;
         margin: 0 0 2rem 0; 
     }
 }

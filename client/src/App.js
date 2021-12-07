@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import PageNav from './components/PageNav/PageNav';
 import Home from '../src/pages/Home/Home';
 import PageNavScroll from "./components/PageNavScroll/PageNavScroll.jsx";
@@ -14,13 +14,13 @@ function App(){
          <section>
              <PageNav />
              <PageNavScroll />
+             <Route path="/" exact component = {Dashboard} />
+             <Route path="/signup" exact component = {SignUp} />
+             <Route path="/login" exact component = {LogIn} />
              <Route path= "/home" exact component= {Home} />
              <Route path= "/character/:characterId" exact component= {Home} />
              <Route path= "/character/:characterId/comics" exact component = {Comics} />
              <Route path= "/:characterId/series" exact component = {Series}/>
-             <Route path="/" exact component = {Dashboard} />
-             <Route path="/signup" exact component = {SignUp} />
-             <Route path="/login" exact component = {LogIn} />
 
          </section>
         </BrowserRouter>

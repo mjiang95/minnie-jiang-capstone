@@ -1,0 +1,44 @@
+@use "../../styles/typography" as *;
+
+.cards-section {
+    display:flex; 
+    justify-content: center;
+}
+
+.description-image, .comics-image, .series-image {
+    width: 200px; 
+    height: 150px;
+    border-radius: 5px;
+}
+
+.description-button, .comics-button, .series-button {
+    display: block;
+    border: none; 
+    outline: none; 
+    cursor: pointer;
+    // margin: 1rem;  
+}
+
+.description-card, .comics-card, .series-card {
+    width: 200px; 
+    height: 250px; 
+    transition: 2s;
+    margin: 2rem; 
+    overflow: hidden; 
+}
+
+
+.content {
+    margin-top: 30px;
+    transform: translateY(-40px);
+    transition: transform 2s;
+    opacity: 0; 
+
+  }
+
+.open-content{
+    transform: translateY(0);
+    transition: transform 2s;
+    opacity: 1;
+
+}

@@ -1,5 +1,5 @@
 .hero-scroll-menu {
-  max-height: 160px;
+  max-height: 175px;
   padding: 14px;
   display: flex;
   overflow: auto;
@@ -11,5 +11,10 @@
 }
 
 .hero-scroll {
-    margin: 0 14px; 
+    margin: 0 1rem; 
+    border-radius: 0.5rem; 
+}
+
+.hero-scroll:hover{
+  transform: scale(1.1);
 }
