@@ -34,7 +34,7 @@
 
     &-subtitle {
         padding: 1rem 0.5rem 1rem 1rem; 
-        width: 15rem; 
+        width: 13rem; 
         font-family: $font-stack; 
     }
 
@@ -54,5 +54,10 @@
         color: white; 
         font-family: $font-stack;
         margin: 0 0 2rem 0; 
+    }
+
+    &-link {
+        text-decoration: none;
+        color: white;
     }
 }

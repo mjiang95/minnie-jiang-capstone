@@ -1,6 +1,7 @@
 import "./hero.scss";
 import Modal from "react-modal";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import heroDescription from "../../assets/images/sihouette-superhero.jpg";
 import heroComics from "../../assets/images/marvel-comics.jpg";
 import heroSeries from "../../assets/images/marvel-series.jpg";
@@ -57,8 +58,10 @@ function Hero(props) {
             <img className="comics-image" src={heroComics} alt="hero-comics" />
           </button>
           <div className={`content ${isOpenComic && "open-content"}`}>
+          <Link className = "hero-main-link" to={`/character/${props.selectedHero.id}/comics`}>
             <p>Marvel Comicon</p>
             #{props.selectedHero.comics.available}
+            </Link>
           </div>
         </div>
         <div className={`series-card ${isOpenSeries && "button-active"}`}>
@@ -69,8 +72,10 @@ function Hero(props) {
             <img className="series-image" src={heroSeries} alt="hero-series" />
           </button>
           <div className={`content ${isOpenSeries && "open-content"}`}>
+            <Link className = "hero-main-link" to={`/character/${props.selectedHero.id}/series`}>
             <p>Marvel Series Continuum</p>
             #{props.selectedHero.series.available}
+            </Link>
           </div>
         </div>
       </section>

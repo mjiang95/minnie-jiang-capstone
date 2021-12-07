@@ -21,7 +21,6 @@ function App(){
              <Route path="/" exact component = {Dashboard} />
              <Route path="/signup" exact component = {SignUp} />
              <Route path="/login" exact component = {LogIn} />
-
          </section>
         </BrowserRouter>
     )
