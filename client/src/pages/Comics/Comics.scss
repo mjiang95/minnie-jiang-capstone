@@ -1,8 +1,29 @@
-.hero-image {
+.hero-comics {
+    display: flex; 
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+    background-image: url(../../assets/images/back.jpg);
+    background-size: 175%;
+}
+
+.hero-comics-image {
     width: 6rem; 
     height: 10rem; 
 }
 
-.hero-name {
-    font-size: 1.5rem; 
+.hero-comics-name {
+    font-size: 0.815rem; 
+    color: white; 
 }
+
+.hero-comics-card {
+    width: 7rem; 
+    height: 20rem; 
+    padding: 1rem; 
+}
+
+.hero-comics-card:hover{
+    transform: scale(1.1);
+  }

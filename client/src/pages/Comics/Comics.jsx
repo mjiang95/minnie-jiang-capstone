@@ -24,12 +24,13 @@ class Comics extends Component {
 
     return (
       <>
-          <div className = "hero--comics">      
+          <div className = "hero-comics">      
               {selectedHero.map((hero) => {
           return (
             <>
+            <div className="hero-comics-card">
               <Link to={`/${hero.urls.url}`}>
-                <img className="hero-image"
+                <img className="hero-comics-image"
                   src={
                     hero.thumbnail.path +
                     "/portrait_medium." +
@@ -38,7 +39,8 @@ class Comics extends Component {
                   alt={hero.title}
                 />
                 </Link>
-              <h2 className="hero-name">{hero.title}</h2>
+              <h2 className="hero-comics-name">{hero.title}</h2>
+              </div>
             </>
           );
         })}
