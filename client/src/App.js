@@ -17,7 +17,7 @@ function App(){
              <Route path= "/home" exact component= {Home} />
              <Route path= "/character/:characterId" exact component= {Home} />
              <Route path= "/character/:characterId/comics" exact component = {Comics} />
-             <Route path= "/:characterId/series" exact component = {Series}/>
+             <Route path= "/character/:characterId/series" exact component = {Series}/>
              <Route path="/" exact component = {Dashboard} />
              <Route path="/signup" exact component = {SignUp} />
              <Route path="/login" exact component = {LogIn} />

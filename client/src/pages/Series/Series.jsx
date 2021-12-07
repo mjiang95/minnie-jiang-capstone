@@ -5,7 +5,7 @@ const axios = require("axios");
 
 class Series extends Component {
     state = {
-        selectedHero: null
+        selectedHeroSeries: []
     };
 
     componentDidMount () {
@@ -15,24 +15,24 @@ class Series extends Component {
             .get(`http://localhost:8080/api/marvel/${characterId}/series`)
             .then ((response) => {
                 this.setState({
-                    selectedHero: response.data.data.results
+                    selectedHeroSeries: response.data
                 })
-                console.log(response.data);
-                console.log(this.state.selectedHero);
+                console.log(this.state.selectedHeroSeries);
             })
         };   
 
     render() {
-      const {selectedHero} = this.state;
+      const {selectedHeroSeries} = this.state;
 
     return (
         <>
-        <div>      
-              {selectedHero.map((hero) => {
+        <div className="hero-series">      
+              {selectedHeroSeries.map((hero) => {
           return (
             <>
+            <div className="hero-series-card">
               <Link to={`/${hero.urls.url}`}>
-                <img className="hero-image"
+                <img className="hero-series-image"
                   src={
                     hero.thumbnail.path +
                     "/portrait_medium." +
@@ -41,7 +41,8 @@ class Series extends Component {
                   alt={hero.title}
                 />
                 </Link>
-              <h2>{hero.title}</h2>
+              <h2 className="hero-series-name">{hero.title}</h2>
+              </div>
             </>
           );
         })}

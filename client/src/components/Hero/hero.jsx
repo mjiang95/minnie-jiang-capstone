@@ -69,7 +69,7 @@ function Hero(props) {
             <img className="series-image" src={heroSeries} alt="hero-series" />
           </button>
           <div className={`content ${isOpenSeries && "open-content"}`}>
-            <p>Marvel Cinematic Universe</p>
+            <p>Marvel Series Continuum</p>
             #{props.selectedHero.series.available}
           </div>
         </div>
