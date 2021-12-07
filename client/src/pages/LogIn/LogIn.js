@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import {Link} from 'react-router-dom';
 import Input from '../../components/Input/Input';
+import "./Login.scss";
 
 function LogIn(props) {
 
@@ -28,8 +29,8 @@ function LogIn(props) {
         <div className="login">
             <h1>Log In</h1>
             <form onSubmit={handleLogIn}>
-                <Input label="Username" name="username" type="text" />
-                <Input label="Password" name="password" type="password" />
+                <Input label="Username" name="username" type="text" className="login-username"/>
+                <Input label="Password" name="password" type="password" className="login-password"/>
                 <button type="submit">Log In</button>
             </form>
             <Link to="/signup">Sign Up</Link>

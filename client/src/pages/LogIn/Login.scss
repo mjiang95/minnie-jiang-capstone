@@ -1,0 +1,13 @@
+@use "../../styles/typography" as *;
+@use "../../styles/global" as *;
+
+
+* {
+    font-family: $font-stack; 
+}
+
+.login {
+    width: 500px;
+    height: 500px; 
+}
+
