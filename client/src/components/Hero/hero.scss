@@ -44,8 +44,6 @@
   transform: translateY(-40px);
   transition: transform 2s;
   opacity: 0;
-
-
 }
 
 .open-content {
@@ -89,7 +87,7 @@
     position: absolute;
     top: 450px;
     left: 230px;
-    text-align: center; 
+    text-align: center;
   }
 }
 
@@ -120,8 +118,8 @@
 }
 
 .hero-description__modal {
- width: auto; 
- height: auto; 
- text-align: center;
- margin: 2rem 1rem; 
+  width: auto;
+  height: auto;
+  text-align: center;
+  margin: 2rem 1rem;
 }

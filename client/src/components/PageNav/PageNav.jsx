@@ -26,11 +26,17 @@ class PageNav extends Component {
         <section className="PageNav">
           <div className="header">
             <div className="PageNav-title">HeroSearch</div>
-            <Link className = "PageNav-link" to={`/character/${heroArray.id}/comics`}>
+            <Link
+              className="PageNav-link"
+              to={`/character/${heroArray.id}/comics`}
+            >
               <div className="PageNav-subtitle">Did you say comics?</div>
             </Link>
-            <Link className = "PageNav-link" to={`/character/${heroArray.id}/series`}>
-            <div className="PageNav-subtitle">How about series?</div>
+            <Link
+              className="PageNav-link"
+              to={`/character/${heroArray.id}/series`}
+            >
+              <div className="PageNav-subtitle">How about series?</div>
             </Link>
             <SearchBar />
           </div>

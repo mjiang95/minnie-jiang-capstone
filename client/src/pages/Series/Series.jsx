@@ -19,7 +19,6 @@ class Series extends Component {
           selectedHeroSeries: response.data,
           cardsAppear: response.data,
         });
-        console.log(this.state.selectedHeroSeries);
       });
   }
 
@@ -30,10 +29,12 @@ class Series extends Component {
       <>
         <div className="series">
           <div className="series-header">
-          <h2 className="hero-series__title">Series</h2>
-          <Link to={`/character/${this.props.match.params.characterId}/comics`}>
-            <img className="next" src={next} alt="next" />
-          </Link>
+            <h2 className="hero-series__title">Series</h2>
+            <Link
+              to={`/character/${this.props.match.params.characterId}/comics`}
+            >
+              <img className="next" src={next} alt="next" />
+            </Link>
           </div>
           <div className="hero-series">
             {selectedHeroSeries.map((hero) => {

@@ -1,52 +1,50 @@
 @use "../../styles/keyframes" as *;
 
 .hero-series {
-    display: flex; 
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center; 
-    padding: 1rem; 
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-
 .hero-series-image {
-    width: 6rem; 
-    height: 10rem; 
-
+  width: 6rem;
+  height: 10rem;
 }
 
 .hero-series-name {
-    font-size: 0.815rem; 
-    color: white; 
+  font-size: 0.815rem;
+  color: white;
 }
 
 .hero-series-card {
-    width: 7rem; 
-    height: 20rem; 
-    padding: 1rem; 
-    animation: 3s ease-out 0s 1 slideInFromLeft;
-    margin: 0 0.5rem; 
+  width: 7rem;
+  height: 20rem;
+  padding: 1rem;
+  animation: 3s ease-out 0s 1 slideInFromLeft;
+  margin: 0 0.5rem;
 }
 
-.hero-series-card:hover{
-    transform: scale(1.1);
-  }
+.hero-series-card:hover {
+  transform: scale(1.1);
+}
 
 .series {
-    background-image: url(../../assets/images/back.jpg);
-    background-size: 175%;
+  background-image: url(../../assets/images/back.jpg);
+  background-size: 175%;
 }
 
 .hero-series__title {
-    color: white; 
-    font-size: 3rem; 
-    padding: 5vw 5vw 0 5vw; 
+  color: white;
+  font-size: 3rem;
+  padding: 5vw 5vw 0 5vw;
 }
 
 .series-header {
-    display: flex; 
-    align-items: center;
-    justify-content: space-between;
-    padding: 5vw; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5vw;
 }

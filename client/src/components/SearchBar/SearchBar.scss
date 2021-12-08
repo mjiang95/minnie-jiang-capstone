@@ -1,93 +1,92 @@
 @use "../../styles/typography" as *;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-    font-family: 'Poppins', sans-seriff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-seriff;
 }
 
-.search-bar__wrapper{
-    max-width: 20rem; 
-    margin: 150px auto; 
-    height: auto; 
+.search-bar__wrapper {
+  max-width: 20rem;
+  margin: 150px auto;
+  height: auto;
 }
 
 .search-bar__wrapper .search-input {
-    background-color: white; 
-    position: relative; 
+  background-color: white;
+  position: relative;
 }
 
 .autocomplete-box {
-    list-style: none;
-    width: 100%;
-    min-height: auto;
-    max-height: 15rem; 
-    cursor: default;
-    border-radius: 1rem;
-    border: 2px solid black;
-    background-color: white; 
-    font-size: 1.25rem;
-    margin: 0.25rem 1rem 0 0;
-    overflow: hidden; 
-    overflow-y: auto; 
-
+  list-style: none;
+  width: 100%;
+  min-height: auto;
+  max-height: 15rem;
+  cursor: default;
+  border-radius: 1rem;
+  border: 2px solid black;
+  background-color: white;
+  font-size: 1.25rem;
+  margin: 0.25rem 1rem 0 0;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .autocomplete-box::-webkit-scrollbar {
-    display: none; 
+  display: none;
 }
 
 .search-input {
-    height: 1.5rem;
-    width: 100%;
-    outline: none; 
-    border: none; 
-    border-radius: 0.5rem; 
-    font-size: 1.25rem; 
-    margin: 0 1rem 0 0; 
+  height: 1.5rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  margin: 0 1rem 0 0;
 }
 
 .search-button .search-icon {
-    height: 100%; 
-    width: 10%; 
-    margin: 1%; 
-    position: absolute;
-    top: 0;
-    right: 0; 
-    text-align: center; 
-    color: #644bff;
-    cursor: pointer;
+  height: 100%;
+  width: 10%;
+  margin: 1%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  color: #644bff;
+  cursor: pointer;
 }
 
 .search-input:active {
-    border-radius: 5px 5px 0 0; 
+  border-radius: 5px 5px 0 0;
 }
 
-.search-input:active .autocomplete-box li{
-    display: block;
-  }
+.search-input:active .autocomplete-box li {
+  display: block;
+}
 
 .autocomplete-box li:hover {
-    background-color: #efefef; 
+  background-color: #efefef;
 }
 
 .input {
-    border: none; 
-    margin: 0 1rem; 
-    font-family: $font-stack; 
+  border: none;
+  margin: 0 1rem;
+  font-family: $font-stack;
 }
 
 .itemslist {
-    list-style-type: none;
-    a {
-        text-decoration: none;
-        color: black; 
-    }
+  list-style-type: none;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 .items {
-    font-size: 1.125rem; 
-    padding: 0.25rem; 
-    font-family: $font-stack;
+  font-size: 1.125rem;
+  padding: 0.25rem;
+  font-family: $font-stack;
 }

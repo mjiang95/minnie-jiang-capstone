@@ -6,12 +6,10 @@ const axios = require("axios");
 class PageNavScroll extends Component {
   state = {
     heroList: [],
-    selectedHero: {}
+    selectedHero: {},
   };
 
   componentDidMount() {
-
-
     axios.get(`http://localhost:8080/api/marvel/`).then((response) => {
       this.setState({
         heroList: response.data,
@@ -24,25 +22,25 @@ class PageNavScroll extends Component {
 
     return (
       <>
-      
-      <div className="hero-scroll-menu">
-        {heroArray.map((hero) => {
-          return (
-            <>
-              <Link to={`/character/${hero.id}`}>
-                <img className="hero-scroll"
-                  src={
-                    hero.thumbnail.path +
-                    "/portrait_medium." +
-                    hero.thumbnail.extension
-                  }
-                  alt={hero.name}
-                />
-              </Link>
-            </>
-          );
-        })}
-         </div>
+        <div className="hero-scroll-menu">
+          {heroArray.map((hero) => {
+            return (
+              <>
+                <Link to={`/character/${hero.id}`}>
+                  <img
+                    className="hero-scroll"
+                    src={
+                      hero.thumbnail.path +
+                      "/portrait_medium." +
+                      hero.thumbnail.extension
+                    }
+                    alt={hero.name}
+                  />
+                </Link>
+              </>
+            );
+          })}
+        </div>
       </>
     );
   }
