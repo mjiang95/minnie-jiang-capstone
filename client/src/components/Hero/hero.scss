@@ -89,6 +89,7 @@
     position: absolute;
     top: 450px;
     left: 230px;
+    text-align: center; 
   }
 }
 
@@ -119,6 +120,8 @@
 }
 
 .hero-description__modal {
- width: 20rem; 
- height: 20rem; 
+ width: auto; 
+ height: auto; 
+ text-align: center;
+ margin: 2rem 1rem; 
 }

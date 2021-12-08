@@ -43,3 +43,10 @@
     font-size: 3rem; 
     padding: 5vw 5vw 0 5vw; 
 }
+
+.series-header {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 5vw; 
+}

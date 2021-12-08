@@ -40,10 +40,21 @@ function Hero(props) {
             />
           </button>
           <div className={`content ${isOpen && "open-content"}`}>
-            <p>Hero Description</p>
             <div id="hero-description">
               <button className="description-modal" onClick={() => setModalIsOpen(true)}>Description</button>
-              <Modal className="hero-description__modal" isOpen={modalIsOpen}>
+              <Modal 
+              style={{
+                overlay: {
+                  width: '25rem', 
+                  height: '15rem',
+                  textAlign: 'center',
+                  position: 'fixed',
+                  top: '150px',
+                  left: '30vw'
+              }
+            }}
+              
+              className="hero-description__modal" isOpen={modalIsOpen}>
                 {props.selectedHero.description}
                 <button onClick={() => setModalIsOpen(false)}>Close</button>
               </Modal>
@@ -59,8 +70,8 @@ function Hero(props) {
           </button>
           <div className={`content ${isOpenComic && "open-content"}`}>
           <Link className = "hero-main-link" to={`/character/${props.selectedHero.id}/comics`}>
-            <p>Marvel Comicon</p>
-            #{props.selectedHero.comics.available}
+            <p>Hero Comics</p>
+            Total Comics: #{props.selectedHero.comics.available}
             </Link>
           </div>
         </div>
@@ -73,8 +84,8 @@ function Hero(props) {
           </button>
           <div className={`content ${isOpenSeries && "open-content"}`}>
             <Link className = "hero-main-link" to={`/character/${props.selectedHero.id}/series`}>
-            <p>Marvel Series Continuum</p>
-            #{props.selectedHero.series.available}
+            <p>Hero Series</p>
+            Total Series: #{props.selectedHero.series.available}
             </Link>
           </div>
         </div>
