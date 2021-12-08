@@ -1,4 +1,5 @@
 import "./Comics.scss";
+import next from "../../assets/logo/next.jpg";
 import { Link } from "react-router-dom";
 import { Component } from "react";
 const axios = require("axios");
@@ -24,7 +25,12 @@ class Comics extends Component {
 
     return (
       <>
-          <div className = "hero-comics">      
+      <div className="comics" >
+          <div className="comics-header">
+          <h2 className = "hero-comics__title">Comics</h2> 
+          {/* <img className = "next" src={next} alt="next" />  */}
+          </div>
+          <div className = "hero-comics"> 
               {selectedHero.map((hero) => {
           return (
             <>
@@ -44,6 +50,7 @@ class Comics extends Component {
             </>
           );
         })}
+        </div>
         </div>      
       </>
     );

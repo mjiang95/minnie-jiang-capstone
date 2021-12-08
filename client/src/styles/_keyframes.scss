@@ -1,0 +1,8 @@
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(150%);
+    }
+    150% {
+      transform: translateX(0);
+    }
+  }

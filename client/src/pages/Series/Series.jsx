@@ -15,7 +15,8 @@ class Series extends Component {
             .get(`http://localhost:8080/api/marvel/${characterId}/series`)
             .then ((response) => {
                 this.setState({
-                    selectedHeroSeries: response.data
+                    selectedHeroSeries: response.data,
+                    cardsAppear: response.data
                 })
                 console.log(this.state.selectedHeroSeries);
             })
@@ -26,11 +27,13 @@ class Series extends Component {
 
     return (
         <>
-        <div className="hero-series">      
+        <div className= "series">
+        <h2 className="hero-series__title">Series</h2>    
+        <div className= "hero-series">  
               {selectedHeroSeries.map((hero) => {
           return (
             <>
-            <div className="hero-series-card">
+            <div className= "hero-series-card">
               <Link to={`/${hero.urls.url}`}>
                 <img className="hero-series-image"
                   src={
@@ -46,7 +49,8 @@ class Series extends Component {
             </>
           );
         })}
-        </div>      
+        </div>  
+        </div>    
         </>
     );
 

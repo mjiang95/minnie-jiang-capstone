@@ -43,7 +43,7 @@ function Hero(props) {
             <p>Hero Description</p>
             <div id="hero-description">
               <button className="description-modal" onClick={() => setModalIsOpen(true)}>Description</button>
-              <Modal isOpen={modalIsOpen}>
+              <Modal className="hero-description__modal" isOpen={modalIsOpen}>
                 {props.selectedHero.description}
                 <button onClick={() => setModalIsOpen(false)}>Close</button>
               </Modal>
