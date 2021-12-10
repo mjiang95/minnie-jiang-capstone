@@ -28,13 +28,13 @@ class PageNav extends Component {
             <div className="PageNav-title">HeroSearch</div>
             <Link
               className="PageNav-link"
-              to={`/character/${heroArray.id}/comics`}
+              to={`/comics`}
             >
               <div className="PageNav-subtitle">Did you say comics?</div>
             </Link>
             <Link
               className="PageNav-link"
-              to={`/character/${heroArray.id}/series`}
+              to={`/series`}
             >
               <div className="PageNav-subtitle">How about series?</div>
             </Link>

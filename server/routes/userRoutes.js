@@ -22,6 +22,7 @@ router.post("/login", (req, res) => {
   knex("marvel_login_user_name")
     .where({ username, password })
     .then((rows) => {
+      console.log(rows)
       if (username === rows[0].username && password === rows[0].password) {
         res
           .status(200)

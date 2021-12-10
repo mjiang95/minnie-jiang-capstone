@@ -1,0 +1,52 @@
+.comics {
+    background-image: url(../../assets/images/Avengers-Infinity-War-Cool.jpg);
+    background-size: 175%;
+  
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5vw;
+    }
+  }
+  
+  .hero-comics {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-comics-image {
+    width: 6rem;
+    height: 10rem;
+  }
+  
+  .hero-comics-name {
+    font-size: 0.815rem;
+    color: white;
+  }
+  
+  .hero-comics-card {
+    width: 7rem;
+    height: 20rem;
+    margin: 0 0.5rem;
+    animation: 3s ease-out 0s 1 slideInFromLeft;
+  }
+  
+  .hero-comics-card:hover {
+    transform: scale(1.1);
+  }
+  
+  .hero-comics__title {
+    color: white;
+    font-size: 3rem;
+  }
+  
+  .next {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+  

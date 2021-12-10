@@ -11,9 +11,13 @@ app.use(cors());
 
 const marvelRoutes = require("./routes/routes");
 const userRoutes = require("./routes/userRoutes");
+const comicsRoutes = require("./routes/comicsRoutes");
+const seriesRoutes = require("./routes/seriesRoutes");
 
 app.use("/api/marvel", marvelRoutes);
 app.use("/users", userRoutes);
+app.use("/api/comics", comicsRoutes);
+app.use("/api/series", seriesRoutes);
 
 const { PORT } = process.env;
 

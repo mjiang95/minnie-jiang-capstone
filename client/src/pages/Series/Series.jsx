@@ -41,7 +41,7 @@ class Series extends Component {
               return (
                 <>
                   <div className="hero-series-card">
-                    <Link to={`/${hero.urls.url}`}>
+                    <a href={hero.urls[0].url} target="_blank">
                       <img
                         className="hero-series-image"
                         src={
@@ -51,7 +51,8 @@ class Series extends Component {
                         }
                         alt={hero.title}
                       />
-                    </Link>
+                    </a>
+
                     <h2 className="hero-series-name">{hero.title}</h2>
                   </div>
                 </>

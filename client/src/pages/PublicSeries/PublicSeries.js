@@ -1,48 +1,47 @@
-import "./Comics.scss";
+import "./PublicSeries.scss";
 import next from "../../assets/logo/next.jpg";
 import { Link } from "react-router-dom";
 import { Component } from "react";
 const axios = require("axios");
 
-class Comics extends Component {
+class PublicSeries extends Component {
   state = {
-    selectedHero: [],
+    seriesArray: [],
   };
 
   componentDidMount() {
-    const characterId = this.props.match.params.characterId;
 
     axios
-      .get(`http://localhost:8080/api/marvel/${characterId}/comics`)
+      .get(`http://localhost:8080/api/series`)
       .then((response) => {
         this.setState({
-          selectedHero: response.data,
+          seriesArray: response.data
         });
       });
   }
 
   render() {
-    const selectedHero = this.state.selectedHero;
+    const { seriesArray } = this.state;
 
     return (
       <>
-        <div className="comics">
-          <div className="comics-header">
-            <h2 className="hero-comics__title">Comics</h2>
+        <div className="series">
+          <div className="series-header">
+            <h2 className="hero-series__title">Marvel Series</h2>
             <Link
-              to={`/character/${this.props.match.params.characterId}/series`}
+              to={`/comics`}
             >
               <img className="next" src={next} alt="next" />
             </Link>
           </div>
-          <div className="hero-comics">
-            {selectedHero.map((hero) => {
+          <div className="hero-series">
+            {seriesArray.map((hero) => {
               return (
                 <>
-                  <div className="hero-comics-card">
-                    <a href={hero.urls[0].url} target="_blank">
+                  <div className="hero-series-card">
+                  <a href={hero.urls[0].url} target="_blank">
                       <img
-                        className="hero-comics-image"
+                        className="hero-series-image"
                         src={
                           hero.thumbnail.path +
                           "/portrait_medium." +
@@ -51,7 +50,7 @@ class Comics extends Component {
                         alt={hero.title}
                       />
                     </a>
-                    <h2 className="hero-comics-name">{hero.title}</h2>
+                    <h2 className="hero-series-name">{hero.title}</h2>
                   </div>
                 </>
               );
@@ -63,4 +62,4 @@ class Comics extends Component {
   }
 }
 
-export default Comics;
+export default PublicSeries;
